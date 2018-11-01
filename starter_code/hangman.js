@@ -1,4 +1,4 @@
-var hangman;
+//var hangman;
 
 // function Hangman() {
 
@@ -37,6 +37,54 @@ document.getElementById('start-game-button').onclick = function () {
 };
 
 
-document.onkeydown = function (e) {
+//document.onkeydown = function (e) {
 
-};
+//};
+
+
+class Hangman {
+  constructor(){
+    let words = ['Ironman', 'Wolverine', 'Thanos', 'Spiderman', 'Travis', 'Thor', 'Hulk'];
+    let secretWord = [];
+    let letters = [];
+    let guessedLetters = '';
+    let errorsLeft = 10;
+  }
+  getWord(){
+    let word = Math.floor(Math.random() * words.length)
+    console.log(words[word])
+    secretWord.push(words[word])
+    console.log(secretWord)
+  }
+
+  checkIfLetter(e){
+    console.log("==============", e.key)
+    this.letters.push(e.key)
+    //console.log(letters)
+    if(Number(e.which) >= 64 && Number(e.which) <= 91){
+      return true
+  
+      } else {
+        
+        alert('REFERENCE ERROR: CANNOT COMPUTE \n LETTERS ONLY')
+        return false
+       
+      
+         
+       }
+  }
+  
+  
+  
+  
+}
+
+document.onkeydown = function onKey(e){
+  hangman.checkIfLetter(e)
+
+}
+
+
+
+
+
